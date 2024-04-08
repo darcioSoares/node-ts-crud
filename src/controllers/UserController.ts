@@ -1,11 +1,10 @@
-let NeDB = require('nedb')
+import { Request, Response } from 'express';
+
+import NeDB from 'nedb'
 let db = new NeDB({
     filename: 'src/db/users.db',
     autoload: true
 })
-
-
-import { Request, Response, application } from 'express';
 
 class UserController {
     public createUser(req: Request, res: Response): void {
